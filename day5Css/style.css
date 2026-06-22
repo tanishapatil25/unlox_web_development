@@ -1,0 +1,11 @@
+/*no structure, directly write css code*/
+div{
+    background-color: beige;
+    text-align: center;
+    color: blue;
+    width: 250px
+}
+h1{
+    font-family: cursive;
+    color: red;
+}
