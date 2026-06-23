@@ -1,0 +1,154 @@
+<!-- /*background properties and menue product card */ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+        .navbarLink{
+            display: flex;
+            gap: 20px;
+        }
+        navbarLink a{
+            text-decoration: none;
+            color: black;
+        }
+        .hero{
+            background-image: url("https://nomoneynotime.com.au/imager/uploads/articles/20569/shutterstock_594962792_461122a663362b265b24d0ffaf0f7f5f.jpeg");
+            width: 100%;
+            height: 300px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        .hero h2{
+            font-style: italic;
+            font-family:'Times New Roman', Times, serif;
+            font-size: 30px;
+            padding-top: 30px;
+            padding-left: 50px;
+        }
+        #heading{
+            display: flex;
+            color: orange;
+            padding-top: 0px;
+            padding-left: 50px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        hr{
+            margin-left: 50px;
+            width: 200px;
+        }
+        #headP{
+            padding-left: 50px;
+        }
+        #menue{
+            display: flex;
+            gap: 20px;
+            padding: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card{
+            width: 250px;
+            background-color: rgb(254, 247, 238);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+        }
+        div img{
+            width: 230px;
+            height: 160px;
+            border-radius: 12px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #menuHr{
+            margin: auto;
+        }
+        button{
+            background-color: rgb(160, 17, 17);
+            border-radius: 10px;
+            border: none;
+            padding: 5px;
+            width: 100px;
+            color: white;
+        }
+        .price{
+            color: rgb(160, 17, 17);
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>PIZZA HUT</h2>
+        <div class="navbarlink">
+            <a href="">home</a>
+            <a href="">Menue</a>
+            <a href="">About Us</a>
+            <a href="">Offers</a>
+            <a href=""> Contact</a>
+        </div>
+    </div>
+    <div class="hero">
+        <h2>Delicious Pizza</h2>
+        <p id="heading">MADE FOR YOU</p>
+        <hr>
+        <P id="headP">Fresh ingridients. Authentic taste.<br>Order your favorite pizza now!</P>
+    </div>
+    <div>
+        <h1>OUR MENU</h1>
+        <hr id="menuHr">
+        <div id="menue">
+        <div class="card">
+            <img src="https://images.pexels.com/photos/33457952/pexels-photo-33457952.jpeg">
+            <h2>Margherita</h2>
+            <p>Classic delight with fresh<br>tomato, mozzarella & basil.</p>
+            <p class="price">₹249</p>
+            <button>Order Now</button>
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/35731444/pexels-photo-35731444.jpeg">
+            <h2>Veggie Supreme</h2>
+            <p>Loaded will bell peppers,<br>olives, onions & more.</p>
+            <p  class="price">₹299</p>
+            <button>Order Now</button>
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/11663567/pexels-photo-11663567.jpeg">
+            <h2>Chicken BBQ</h2>
+            <p>Grilled chicken, BBQ sauce,<br>onions & mozzarella.</p>
+            <p  class="price">₹349</p>
+            <button>Order Now</button>
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/6068717/pexels-photo-6068717.jpeg">
+            <h2>Pepperoni</h2>
+            <p>Classic pepperoni with<br>cheese & tomato sauce</p>
+            <p  class="price">₹329</p>
+            <button>Order Now</button>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
