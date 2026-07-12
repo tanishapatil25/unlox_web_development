@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .products{
+            display: flex; /* by default arranges in row form*/
+            /*flex-direction: row-reverse; /*for specifing the direction or other option*/
+            justify-content:  center; /*has more option*/
+            gap: 20px;
+            align-items: center;
+            height: 500px;
+            background-color: aqua;
+            flex-wrap: wrap;
+            
+        }
+        .box{
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            color: white;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="products">
+        <div class="box">Cake</div>
+        <div class="box">Cookies</div>
+        <div class="box">Pastry</div>
+
+    </div>
+    <div class="products">
+        <div class="box">Cake</div>
+        <div class="box">Cookies</div>
+        <div class="box">Pastry</div>
+
+    </div>
+    <div class="products">
+        <div class="box">Cake</div>
+        <div class="box">Cookies</div>
+        <div class="box">Pastry</div>
+
+    </div>
+</body>
+</html>

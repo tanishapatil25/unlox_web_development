@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #111827;
+}
+nav h2{
+    color: white;
+}
+.menu{
+    display: flex;
+    gap: 30px;
+}
+.menu a{
+    color: white;
+    text-decoration: none;
+}
+.hero{
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero h1{
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+.hero p{
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+.hero button{
+    padding: 15px 30px;
+    border: none;
+    background-color: white;
+    color: #2563eb;
+    border-radius: 5 px;
+    font-size: 18px;
+}
+.title{
+    text-align: center;
+    margin: 50px 0;
+}
+.courses{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 0 60px;
+
+}
+.card{
+    border: 1px solid black;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    background: white;
+}
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}

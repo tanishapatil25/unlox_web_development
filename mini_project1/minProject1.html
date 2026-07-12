@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanisha Patil | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Segoe UI', sans-serif;
+            color: #1B2A4A;
+        }
+
+        /* ---- NAVBAR ---- */
+        #mainNav {
+            background-color: #ffffff;
+            border-bottom: 1px solid #dce3ef;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            padding: 12px 0;
+        }
+
+        .navbar-brand {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1B2A4A;
+            margin-left: 60px;
+        }
+
+        .navbar-brand span {
+            color: #2563EB;
+        }
+
+        .nav-link {
+            color: #555 !important;
+            font-size: 15px;
+            margin: 0 8px;
+        }
+
+        .nav-link:hover {
+            color: #2563EB !important;
+        }
+
+        .talk-btn {
+            background-color: #1B2A4A;
+            border-radius: 25px;
+            padding: 8px 22px;
+            margin-right: 60px;
+        }
+
+        .talk-btn a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* ---- SECTIONS ---- */
+        section {
+            padding-top: 100px;
+            padding-bottom: 70px;
+        }
+
+        /* ---- HOME ---- */
+        #home {
+            background-color: #f0f4f8;
+            min-height: 100vh;
+        }
+
+        .status-badge {
+            background-color: #ffffff;
+            border: 1px solid #dce3ef;
+            border-radius: 25px;
+            display: inline-block;
+            padding: 6px 18px;
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .hero-title {
+            font-size: 58px;
+            font-weight: 700;
+            color: #1B2A4A;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-title span {
+            color: #2563EB;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 520px;
+        }
+
+        #btn-projects {
+            background-color: #1B2A4A;
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 28px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        #btn-contact {
+            background-color: transparent;
+            color: #1B2A4A;
+            border: 1.5px solid #1B2A4A;
+            border-radius: 25px;
+            padding: 12px 28px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+
+        /* stat boxes */
+        .stat-box {
+            background-color: #ffffff;
+            border: 1px solid #dce3ef;
+            border-radius: 12px;
+            padding: 14px 20px;
+            text-align: center;
+            display: inline-block;
+            margin-right: 12px;
+            margin-top: 30px;
+        }
+
+        .stat-box h3 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1B2A4A;
+            margin: 0;
+        }
+
+        .stat-box p {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* terminal card */
+        .terminal-card {
+            background-color: #1B2A4A;
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 370px;
+            margin-left: auto;
+            margin-top: 30px;
+        }
+
+        .terminal-topbar {
+            background-color: #243358;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .dot-red    { width: 11px; height: 11px; border-radius: 50%; background-color: #FF5F57; }
+        .dot-yellow { width: 11px; height: 11px; border-radius: 50%; background-color: #FEBC2E; }
+        .dot-green  { width: 11px; height: 11px; border-radius: 50%; background-color: #28C840; }
+
+        .terminal-body {
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 2;
+        }
+
+        .t-prompt { color: #60a5fa; }
+        .t-white  { color: #e2e8f0; }
+        .t-gray   { color: #94a3b8; }
+        .t-green  { color: #22c55e; font-weight: bold; }
+        .t-yellow { color: #fbbf24; }
+
+        /* currently bar */
+        .currently-bar {
+            background-color: #ffffff;
+            border-top: 1px solid #dce3ef;
+            border-bottom: 1px solid #dce3ef;
+            padding: 14px 0;
+            margin-top: 50px;
+        }
+
+        .currently-bar p {
+            font-size: 11px;
+            color: #888;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0 0 8px 0;
+        }
+
+        .curr-tag {
+            background-color: #f0f4f8;
+            border: 1px solid #dce3ef;
+            border-radius: 20px;
+            padding: 5px 14px;
+            font-size: 13px;
+            color: #1B2A4A;
+            font-weight: 500;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        /* ---- ABOUT ---- */
+        #about {
+            background-color: #ffffff;
+        }
+
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #2563EB;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1B2A4A;
+            margin-bottom: 12px;
+        }
+
+        .blue-line {
+            width: 45px;
+            height: 3px;
+            background-color: #2563EB;
+            border-radius: 2px;
+            margin-bottom: 30px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* education box */
+        .edu-box {
+            background-color: #f0f4f8;
+            border: 1px solid #dce3ef;
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-top: 20px;
+        }
+
+        .edu-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #dce3ef;
+            font-size: 14px;
+        }
+
+        .edu-row:last-child {
+            border-bottom: none;
+        }
+
+        .edu-row .edu-name {
+            font-weight: 600;
+            color: #1B2A4A;
+        }
+
+        .edu-row .edu-place {
+            color: #888;
+            font-size: 12px;
+        }
+
+        .edu-row .edu-result {
+            text-align: right;
+            color: #2563EB;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        /* skill tags */
+        .skill-group {
+            margin-bottom: 18px;
+        }
+
+        .skill-group-name {
+            font-size: 11px;
+            font-weight: 700;
+            color: #888;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: #EEF2FF;
+            color: #3730A3;
+            border-radius: 6px;
+            padding: 4px 12px;
+            font-size: 13px;
+            font-weight: 500;
+            margin: 3px;
+        }
+
+        /* ---- PROJECTS ---- */
+        #project {
+            background-color: #f0f4f8;
+        }
+
+        .proj-card {
+            background-color: #ffffff;
+            border: 1px solid #dce3ef;
+            border-radius: 16px;
+            padding: 28px;
+            height: 100%;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .proj-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .proj-card.dark {
+            background-color: #1B2A4A;
+        }
+
+        .proj-card.dark h4 {
+            color: #e2e8f0;
+        }
+
+        .proj-card.dark p {
+            color: #94a3b8;
+        }
+
+        .proj-card.dark .proj-tag {
+            background-color: rgba(255,255,255,0.1);
+            color: #a5b4fc;
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .proj-tag {
+            display: inline-block;
+            background-color: #EEF2FF;
+            color: #2563EB;
+            border: 1px solid #dce3ef;
+            border-radius: 4px;
+            padding: 3px 10px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .proj-card h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1B2A4A;
+            margin: 14px 0 10px;
+        }
+
+        .proj-card p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.65;
+        }
+
+        /* ---- EXPERIENCE ---- */
+        #experience {
+            background-color: #ffffff;
+        }
+
+        .exp-entry {
+            padding: 30px 0;
+            border-bottom: 1px solid #dce3ef;
+        }
+
+        .exp-entry:last-child {
+            border-bottom: none;
+        }
+
+        .exp-date {
+            font-size: 13px;
+            color: #888;
+            font-family: 'Courier New', monospace;
+        }
+
+        .exp-role {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1B2A4A;
+        }
+
+        .exp-org {
+            font-size: 14px;
+            color: #2563EB;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .exp-bullets li {
+            font-size: 14px;
+            color: #555;
+            padding: 4px 0 4px 18px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .exp-bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #2563EB;
+        }
+
+        .exp-bullets strong {
+            color: #1B2A4A;
+        }
+
+        /* ---- ACHIEVEMENTS ---- */
+        #achievements {
+            background-color: #f0f4f8;
+        }
+
+        .ach-card {
+            background-color: #ffffff;
+            border: 1px solid #dce3ef;
+            border-radius: 14px;
+            padding: 22px;
+            height: 100%;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .ach-icon {
+            font-size: 22px;
+            background-color: #EEF2FF;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ach-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1B2A4A;
+            margin-bottom: 5px;
+        }
+
+        .ach-desc {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ---- CONTACT ---- */
+        #contact {
+            background-color: #1B2A4A;
+            padding-top: 90px;
+            padding-bottom: 90px;
+        }
+
+        #contact .section-label {
+            color: #a5b4fc;
+        }
+
+        #contact .section-title {
+            color: #ffffff;
+        }
+
+        #contact .blue-line {
+            background-color: #a5b4fc;
+        }
+
+        #contact p {
+            color: #94a3b8;
+        }
+
+        .contact-link {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 10px;
+            padding: 12px 22px;
+            color: #e2e8f0;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .contact-link:hover {
+            background-color: rgba(255,255,255,0.18);
+            color: #ffffff;
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            background-color: #0f1a30;
+            color: #475569;
+            font-size: 13px;
+            text-align: center;
+            padding: 18px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div id="mainNav">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">tanisha<span>.patil</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#project">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="talk-btn">
+                <a href="mailto:patiltanisha345@gmail.com">Let's Talk</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<section id="home">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+                <div class="status-badge">🟢 Open to internships & collaborations — 2026</div>
+
+                <h1 class="hero-title">
+                    Building at the<br>
+                    intersection of<br>
+                    <span>code, data & impact.</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    I'm Tanisha — an IT undergrad at VIT Pune (CGPA 9.04). I build full-stack web products,
+                    ship ML and generative AI systems, and explore IoT and blockchain in between.
+                </p>
+
+                <button id="btn-projects" onclick="document.getElementById('project').scrollIntoView({behavior:'smooth'})">View Projects ↗</button>
+                <button id="btn-contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in Touch</button>
+
+                <div>
+                    <div class="stat-box">
+                        <h3>9.04</h3>
+                        <p>CGPA</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>1</h3>
+                        <p>Patent Filed</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>3+</h3>
+                        <p>Work Roles</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>4+</h3>
+                        <p>Projects</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="terminal-card">
+                    <div class="terminal-topbar">
+                        <div class="dot-red"></div>
+                        <div class="dot-yellow"></div>
+                        <div class="dot-green"></div>
+                    </div>
+                    <div class="terminal-body">
+                        <p><span class="t-prompt">tanisha@vit</span> <span class="t-white">~ % whoami</span></p>
+                        <p class="t-green">Tanisha Patil</p>
+                        <br>
+                        <p><span class="t-gray">role       </span> <span class="t-white">full-stack + ml developer</span></p>
+                        <p><span class="t-gray">stack      </span> <span class="t-white">React · Node · Python · GANs</span></p>
+                        <p><span class="t-gray">also       </span> <span class="t-white">Blockchain · IoT · Research</span></p>
+                        <p><span class="t-gray">location   </span> <span class="t-white">Pune, India</span></p>
+                        <p><span class="t-gray">cgpa       </span> <span class="t-green">▸ 9.04 / 10</span></p>
+                        <p><span class="t-gray">status     </span> <span class="t-yellow">seeking internship 2026</span></p>
+                        <br>
+                        <p><span class="t-prompt">tanisha@vit</span> <span class="t-white">~ % </span><span style="background:#60a5fa; width:8px; height:14px; display:inline-block; vertical-align:middle;"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="currently-bar">
+            <p>Currently</p>
+            <span class="curr-tag">VIT Pune — 3rd Year</span>
+            <span class="curr-tag">UniCraze — Systems & Technical</span>
+            <span class="curr-tag">Systech Solutions — Freelance Dev</span>
+            <span class="curr-tag">DSA — Striver's Sheet · Java</span>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <p class="section-label">— About</p>
+        <h2 class="section-title">A developer who loves<br>shipping and learning.</h2>
+        <div class="blue-line"></div>
+
+        <div class="row">
+
+            <div class="col-lg-7">
+                <p class="about-text">
+                    I'm a third-year B.Tech Information Technology student at Vishwakarma Institute of Technology, Pune,
+                    currently maintaining a 9.04 CGPA. I enjoy turning ideas into working software — whether that's a
+                    production business website, a research-grade ML system, or a solar-powered IoT rig with a patent to show for it.
+                </p>
+                <p class="about-text">
+                    Right now I'm contributing to UniCraze's internal role-based portal, independently maintaining
+                    the Systech Solutions website end-to-end, and pushing research in generative AI for cybersecurity.
+                    I also solve DSA problems daily (Striver's Sheet in Java) to stay sharp for placements.
+                </p>
+
+                <p class="section-label mt-4">Education</p>
+                <div class="edu-box">
+                    <div class="edu-row">
+                        <div>
+                            <div class="edu-name">B.Tech Information Technology</div>
+                            <div class="edu-place">VIT Pune</div>
+                        </div>
+                        <div class="edu-result">2024 – 2028<br>9.04 / 10</div>
+                    </div>
+                    <div class="edu-row">
+                        <div>
+                            <div class="edu-name">HSC (12th)</div>
+                            <div class="edu-place">APK Junior College, Pune</div>
+                        </div>
+                        <div class="edu-result">2024<br>82%</div>
+                    </div>
+                    <div class="edu-row">
+                        <div>
+                            <div class="edu-name">SSC (10th)</div>
+                            <div class="edu-place">Delhi Public School, Pune</div>
+                        </div>
+                        <div class="edu-result">2022<br>92%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 mt-4 mt-lg-0">
+                <p class="section-label">Technical Skills</p>
+
+                <div class="skill-group">
+                    <div class="skill-group-name">Languages</div>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-name">Web Development</div>
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">HTML / CSS</span>
+                    <span class="skill-tag">Bootstrap</span>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-name">Data & ML</div>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Streamlit</span>
+                    <span class="skill-tag">GANs / WGAN-GP</span>
+                    <span class="skill-tag">Random Forest</span>
+                    <span class="skill-tag">XGBoost</span>
+                    <span class="skill-tag">BiLSTM</span>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-name">Cloud & Databases</div>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Supabase</span>
+                    <span class="skill-tag">Vercel</span>
+                    <span class="skill-tag">Render</span>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-name">Blockchain & IoT</div>
+                    <span class="skill-tag">Hyperledger Fabric</span>
+                    <span class="skill-tag">IPFS</span>
+                    <span class="skill-tag">Arduino</span>
+                    <span class="skill-tag">Blynk</span>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-name">Tools</div>
+                    <span class="skill-tag">Git / GitHub</span>
+                    <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">VS Code</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="project">
+    <div class="container">
+        <p class="section-label">— Projects</p>
+        <h2 class="section-title">Things I've built.</h2>
+        <div class="blue-line"></div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-8">
+                <div class="proj-card dark">
+                    <span class="proj-tag">Research</span>
+                    <span class="proj-tag">ML + GenAI</span>
+                    <span class="proj-tag">Cybersecurity</span>
+                    <h4>Ransomware Behavioral Detection System</h4>
+                    <p>
+                        Led a 5-person team to build a research-grade ransomware detection system. Introduced a novel
+                        per-class normalisation for Conditional Wasserstein GANs (CWGAN-GP) that improved synthetic
+                        data quality from 70% → 95% TSTR accuracy. Detection ensemble (Random Forest + XGBoost + BiLSTM)
+                        hits 96% accuracy across 26 real-time behavioral features.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="proj-card dark">
+                    <span class="proj-tag">Full-Stack</span>
+                    <span class="proj-tag">Live</span>
+                    <h4>Systech Solutions — Company Website</h4>
+                    <p>
+                        Independently designed, built, and deployed end-to-end on Node.js / Express + Supabase + Vercel.
+                        Rerouted email via Gmail REST API; fixed Storage RLS, CORS failures, and replaced prompt() admin flows.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="proj-card">
+                    <span class="proj-tag">IoT</span>
+                    <span class="proj-tag">Patent Filed</span>
+                    <h4>Moisture Responsive Irrigation System</h4>
+                    <p>
+                        Solar-powered smart irrigation with real-time soil monitoring, dual water-source failover,
+                        and Blynk mobile app. Published in IJERT; patent filed.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="proj-card">
+                    <span class="proj-tag">Blockchain</span>
+                    <span class="proj-tag">Sponsored</span>
+                    <h4>AVANSABER CERTISURE</h4>
+                    <p>
+                        Decentralized certificate issuance using Blockchain + IPFS + Hyperledger Fabric.
+                        Hashes stored on-chain for tamper-proof, instant employer verification.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="proj-card">
+                    <span class="proj-tag">Full-Stack</span>
+                    <span class="proj-tag">React · Node · MongoDB</span>
+                    <h4>CivicHarmony</h4>
+                    <p>
+                        Citizen engagement platform for issue reporting, community discussions, and transparent
+                        communication between residents and local authorities.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <div class="container">
+        <p class="section-label">— Experience</p>
+        <h2 class="section-title">Where I've been building.</h2>
+        <div class="blue-line"></div>
+
+        <div class="exp-entry">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="exp-date">Apr 2026<br>Present</div>
+                </div>
+                <div class="col-md-10">
+                    <div class="exp-role">Associate, Systems & Technical</div>
+                    <div class="exp-org">UniCraze — Student Ecosystem Platform</div>
+                    <ul class="exp-bullets">
+                        <li>Contributing to an <strong>internal role-based portal</strong> (Founder / Domain Head / Member tiers) with employee-ID-based authentication using Node.js.</li>
+                        <li>Improving <strong>admin dashboard</strong> features including sorting, filtering, and CSV export for platform-wide internal tooling.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="exp-entry">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="exp-date">Dec 2025<br>Present</div>
+                </div>
+                <div class="col-md-10">
+                    <div class="exp-role">Full-Stack Developer (Freelance)</div>
+                    <div class="exp-org">Systech Solutions</div>
+                    <ul class="exp-bullets">
+                        <li><strong>End-to-end ownership:</strong> independently designed, built, and maintain the complete business website using Node.js / Express on Vercel with Supabase (PostgreSQL).</li>
+                        <li>Resolved SMTP delivery failures by rerouting transactional email through Vercel serverless functions via the <strong>Gmail REST API</strong>.</li>
+                        <li>Fixed Supabase Storage <strong>RLS misconfigurations</strong> and CORS failures; replaced native prompt() admin flows with custom modals.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="exp-entry">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="exp-date">2024</div>
+                </div>
+                <div class="col-md-10">
+                    <div class="exp-role">Data Analytics Intern (Virtual)</div>
+                    <div class="exp-org">Infosys Springboard 6.0</div>
+                    <ul class="exp-bullets">
+                        <li>Performed <strong>data cleaning, EDA, and feature engineering</strong> on real-world datasets using Python and Pandas; applied classification and clustering.</li>
+                        <li>Built interactive <strong>Power BI and Streamlit dashboards</strong> to visualize content trends, ratings, and availability across datasets.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="achievements">
+    <div class="container">
+        <p class="section-label">— Achievements</p>
+        <h2 class="section-title">Recognition & milestones.</h2>
+        <div class="blue-line"></div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="ach-card">
+                    <div class="ach-icon">🏆</div>
+                    <div>
+                        <div class="ach-title">IEEE Best Paper Award</div>
+                        <p class="ach-desc">"Glass-Box" Academic Integrity: Explainable Multi-Algorithmic Plagiarism Detection Engine — recognised at IEEE Forum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="ach-card">
+                    <div class="ach-icon">📄</div>
+                    <div>
+                        <div class="ach-title">Patent Filed</div>
+                        <p class="ach-desc">Filed patent for Moisture Responsive Irrigation System — IoT-based smart farming solution with solar integration and real-time monitoring.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="ach-card">
+                    <div class="ach-icon">📝</div>
+                    <div>
+                        <div class="ach-title">IJERT Research Publication</div>
+                        <p class="ach-desc">Published research paper on the Moisture Responsive Irrigation System in the International Journal of Engineering Research & Technology.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="ach-card">
+                    <div class="ach-icon">💡</div>
+                    <div>
+                        <div class="ach-title">Barclays Hack-O-Hire</div>
+                        <p class="ach-desc">Cleared the competitive PPT round of the Barclays national-level hackathon, selected from a large pool of applicants.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="ach-card">
+                    <div class="ach-icon">🥇</div>
+                    <div>
+                        <div class="ach-title">1st Place — Pitch Perfect</div>
+                        <p class="ach-desc">Secured 1st place at Vishwakarandak Pitch Perfect by ideating an optimised ATM automation concept with actionable data-driven predictions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="ach-card">
+                    <div class="ach-icon">☁️</div>
+                    <div>
+                        <div class="ach-title">Oracle OCI Gen AI Professional</div>
+                        <p class="ach-desc">Certified by Oracle Corporation as an OCI 2025 Generative AI Professional — covering large language models and Gen AI workflows.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container text-center">
+        <p class="section-label">— Contact</p>
+        <h2 class="section-title">Let's build something together.</h2>
+        <div class="blue-line mx-auto"></div>
+        <p class="mt-3 mb-5" style="max-width: 460px; margin-left: auto; margin-right: auto;">
+            I'm open to internship opportunities, research collaborations, and interesting projects.
+            Reach out — I usually respond within a day.
+        </p>
+        <div>
+            <a href="mailto:patiltanisha345@gmail.com" class="contact-link">✉️  patiltanisha345@gmail.com</a>
+            <a href="https://linkedin.com/in/tanisha-patil-619a85330" target="_blank" class="contact-link">💼  LinkedIn</a>
+            <a href="https://github.com/tanishapatil25" target="_blank" class="contact-link">🐙  GitHub</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Tanisha Patil &nbsp;·&nbsp; Built with HTML, CSS & Bootstrap</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
