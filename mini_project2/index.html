@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            background-color: rgb(5, 23, 23);
+            color: aliceblue;
+        }
+        .navbar {
+            background-color: rgb(5, 23, 23);
+            top: 0;
+            left: 0;
+            width: 100%;
+            position: fixed;
+            padding: 0.75rem 1rem;
+            z-index: 1000;
+            border-bottom: 0.5px solid rgb(40, 52, 48);
+        }
+        .container-fluid {
+            background-color: rgb(5, 23, 23);
+        }
+        .navbar-brand {
+            background-color: rgb(5, 23, 23);
+            color: aliceblue;
+            font-weight: 700;
+            margin-left: 160px;
+        }
+        #navbarNav {
+            background-color: rgb(5, 23, 23);
+        }
+        .navbar-nav {
+            margin: 0 auto;
+        }
+        .nav-link {
+            background-color: rgb(5, 23, 23);
+            color: rgb(167, 202, 202);
+        }
+        .navbar-button button {
+            color: black;
+            font-weight: 500;
+            background: linear-gradient(135deg, rgb(7, 168, 168) 0%, aquamarine 75%, aquamarine 100%);
+            border-radius: 20px;
+            width: 90px;
+            height: 35px;
+            border: 0;
+            margin-right: 170px;
+        }
+        
+        @media (min-width: 992px) {
+            #navbarNav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        @media (max-width: 991.98px) {
+            .navbar-button {
+                display: none;
+            }
+            .nav-link {
+                padding: 0.75rem 1rem;
+            }
+        }
+        #home {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000000 0%, #0d1f2d 75%, #1b4a4b 100%);
+            display: flex;
+        }
+        #hero-title{
+            color: aqua;
+            text-align: left;
+            margin: 0 0 15px 0;
+            border: 1px solid rgb(44, 74, 74);
+            width: 170px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: small;
+            align-content: center;
+            height: 25px;
+        }
+        .hero-card {
+            display: flex;
+            width: 100%;
+            align-items: flex-start;
+        }
+        .hero-main-description {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 170px;
+            padding-top: 150px;
+            flex: 1;
+        }
+        .hero-card h1 {
+            margin: 0 0 15px 0;
+            font-size: 60px;
+            font-weight: 700;
+            width: 90%;
+        }
+        #hero-description {
+            margin: 0 0 30px 0;
+            color: rgb(167, 202, 202);
+            width: 80%;
+            font-size: 19px;
+            text-align: left;
+            background-color: transparent;
+        }
+        #buy-now {
+            background: linear-gradient(135deg, rgb(7, 168, 168) 0%, aquamarine 75%, aquamarine 100%);
+            border: 0;
+            border-radius: 30px;
+            height: 50px;
+            width: 150px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+        #learn-more {
+            color: aliceblue;
+            background-color: #000000;
+            border: 1px solid rgb(44, 74, 74);
+            border-radius: 30px;
+            height: 50px;
+            width: 150px;
+            font-weight: 600;
+        }
+        .hero-div {
+            display: flex;
+            margin-top: 40px;
+            gap: 40px;
+            justify-content: left;
+        }
+        .hero-divs {
+            width: 150px;
+            background-color: transparent;
+        }
+        .hero-divs h3{
+            background-color: transparent;
+            font-size: 23px;
+            margin-bottom: 0;
+        }
+        .hero-divs p {
+            background-color: transparent;
+            font-size: smaller;
+            color: rgb(129, 167, 167);
+        }
+        #features {
+            background-color: rgb(0, 22, 22);
+            width: 100%;
+            min-height: 100vh;
+            justify-content: center;
+            text-align: center;
+        }
+        .feature-div {
+            width: 360px;
+            height: 200px;
+            border: 1px solid rgb(35, 66, 66);
+            border-radius: 20px;
+            background-color: #0d2020;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .feature-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 20px;
+            background-color: rgb(31, 52, 52);
+            border: 1px solid aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aqua;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        .feature-div h3 {
+            font-size: 20px;
+            margin: 0;
+        }
+        .feature-div p{
+            font-size: 15px;
+            color: rgb(167, 202, 202);
+        }
+        #benefits {
+            background-color: #000000;
+            padding: 80px 0;
+        }
+        .benefits {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        .benefit-description {
+            margin-right: 170px;
+            margin-left: 50px;
+            margin-top: 40px;
+            flex: 1;
+        }
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .benefit-icon {
+            color: aqua;
+            font-size: 22px;
+            margin-top: 0;
+            flex-shrink: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            width: 24px;
+            line-height: 1;
+        }
+        .benefit-content {
+            flex: 1;
+        }
+        .benefit-content h3 {
+            margin: 0 0 6px 0;
+            font-size: 20px;
+            text-align: left;
+            line-height: 1.3;
+        }
+        .benefit-content p {
+            margin: 0;
+            color: rgb(167, 202, 202);
+            text-align: left;
+            font-size: 16px;
+        }
+        #reviews {
+            text-align: center;
+            margin-left: 170px;
+            text-align: center;
+            margin-right: 170px;
+        }
+        .review_div {
+            height: 300px;
+            width: 345px;
+            border: 1px solid rgb(37, 54, 54);
+            border-radius: 20px;
+            background-color: #0d2020;
+            margin-top: 30px;
+            text-align: left;
+            padding: 20px;
+            margin-left: 30px;
+        }
+        .div_head {
+            width: 40px;
+            height: 40px;
+            font-size: smaller;
+            font-weight: 400;
+            margin: 10px;
+            text-align: center;
+            background-color: aquamarine;
+            border-radius: 30px;
+            color: #000000;
+            padding: 6px;
+        }
+        #pricing {
+            background-color: #000000;
+            padding-top: 120px; 
+            border-bottom: 1px solid rgb(51, 85, 85);
+        }
+        .pricing {
+            margin-left: 170px;
+            margin-right: 170px;
+            text-align: center;
+            margin-top: 0;
+            padding-bottom: 80px;
+        }
+        .pricing_div {
+            border: 1px solid rgb(35, 66, 66);
+            border-radius: 20px;
+            background-color: #0d2020;
+            width: 350px;
+            height: 400px;
+            text-align: left;
+            padding: 20px;
+            margin-bottom: 100px;
+        }
+        .pricing_div strong {
+            color: aliceblue;
+            font-size: 40px;
+            font-weight: 500;
+        }
+        .pricing_points {
+            display: flex;
+            align-items: flex-start;
+        }
+        .pricing_div button {
+            background-color: #183e3e;
+            border: 1px solid rgb(70, 105, 105);
+            border-radius: 20px;
+            color: aliceblue;
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+            padding: 12px 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+        footer {
+            margin-left: 170px;
+            margin-right: 170px;
+            margin-top: 100px;
+        }
+        footer p {
+            color: rgb(167, 202, 202);
+            
+        }
+        .footer_points p{
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+        #footer h4 {
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#home"><i class="bi bi-smartwatch"></i> Aurora</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Benefits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-button">
+                <button href="#pricing">Buy Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="hero-card">
+            <div class="hero-main-description">
+            <p id="hero-title"> ✰  New — Aurora Series 5</p>
+            <h1>Your health, brilliantly tracked.</h1>
+            <p id="hero-description">The Aurora smartwatch fuses medical-grade sensors with a stunning AMOLED display and a 5-day battery — so you can move, sleep and live smarter.</p>
+            <div>
+            <button id="buy-now" href="#pricing">Buy Now ⟶</button>
+            <button id="learn-more" href="#features">Learn More</button>
+            <div class="hero-div">
+            <div class="hero-divs">
+                <h3>4.9/5</h3>
+                <p>12k+ reviews</p>
+            </div>
+            <div class="hero-divs">
+                <h3>5 days</h3>
+                <p>battery life</p>
+            </div>
+            <div class="hero-divs">
+                <h3>50m</h3>
+                <p>water resist</p>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div id="hero-image">
+            <img src="https://images.pexels.com/photos/8839887/pexels-photo-8839887.jpeg" height="450px" width="480px" style="border: 1px solid rgb(45, 60, 60); border-radius: 30px; margin-right: 220px; margin-top: 150px">
+        </div>
+        </div>
+        
+    </section>
+    <section id="features">
+        <div style="margin-left: 430px; margin-right: 430px">
+        <h5 style="color: aqua; margin-top: 100px; margin-bottom: 10px;">F E A T U R E S</h5>
+        <h3 style="font-size: 35px; font-weight: 500; margin-bottom: 10px;">Everything you need on one wrist</h3>
+        <p style="color: rgb(129, 167, 167); font-size: 17px">Packed with the sensors and smarts of a personal health lab, in a design you'll never want to take off.</p>
+        </div>
+        <div style="margin-left: 170px; margin-right: 170px; display: flex; flex-wrap: wrap; gap:20px; justify-content: center">
+            <div class="feature-div">
+                <div class="feature-top">
+                    <div class="icon">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </div>
+                    <h3>Medical-grade ECG</h3>
+                </div>
+                <p>Continuous heart-rate and ECG monitoring with instant irregular-rhythm alerts.</p>
+            </div>
+            <div class="feature-div">
+                <div class="feature-top">
+                    <div class="icon">
+                        <i class="bi bi-battery-charging"></i>
+                    </div>
+                    <h3>5-day battery</h3>
+                </div>
+                <p>A full working week on a single charge, plus 60% top-up in just 20 minutes.</p>
+            </div>
+            <div class="feature-div">
+                <div class="feature-top">
+                    <div class="icon">
+                        <i class="bi bi-moon-fill"></i>
+                    </div>
+                    <h3>Advanced sleep</h3>
+                <p>Track sleep stages, blood oxygen and get a nightly readiness score.</p>
+                </div>
+            </div>
+            <div class="feature-div">
+                <div class="feature-top">
+                    <div class="icon">
+                        <i class="bi bi-droplet-fill"></i>
+                    </div>
+                    <h3>50m water resist</h3>
+                </div>
+                <p>Swim-proof titanium body engineered for pools, oceans and everything between.</p>
+            </div>
+            <div class="feature-div">
+                <div class="feature-top">
+                    <div class="icon">
+                        <i class="bi bi-activity"></i>
+                    </div>
+                    <h3>120+ workouts</h3>
+                </div>
+                <p>Auto-detects your activity and maps every route with dual-band GPS.</p>
+            </div>
+            <div class="feature-div">
+                <div class="feature-top">
+                    <div class="icon">
+                        <i class="bi bi-bell"></i>
+                    </div>
+                    <h3>Smart notifications</h3>
+                </div>
+                <p>Calls, texts and apps on your wrist with a crisp, always-on AMOLED display.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="benefits">
+        <div class="benefits">
+            <div>
+                <img src="https://images.pexels.com/photos/31406903/pexels-photo-31406903.jpeg" height="700px" width="550px" style="margin-left: 170px; margin-top: 100px; border-radius: 30px;">
+            </div>
+            <div class="benefit-description">
+                <h5 style="color: aqua; margin-top: 100px; margin-bottom: 10px; font-size:15px;">B E N E F I T S</h5>
+                <h3 style="font-size: 40px; margin-top: 10px; margin-bottom: 10px">Not just a watch — a smarter way to live</h3>
+                <p style="font-size: 18px; color: rgb(167, 202, 202); margin-bottom: 30px;" >Aurora works quietly in the background, turning millions of data points into actions that actually improve your day.</p>
+                <div>
+                    <ul class="benefit-list">
+                        <li class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3 style="font-size: 18px;">Build lasting habits</h3>
+                                <p style="font-size: 15px;">Personalized daily goals and gentle nudges keep you consistent without the burnout.</p>
+                            </div>
+                        </li>
+                        <li class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3 style="font-size: 18px;">Understand your body</h3>
+                                <p style="font-size: 15px;">Turn raw data into clear insights on stress, recovery and long-term trends.</p>
+                            </div>
+                        </li>
+                        <li class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3 style="font-size: 18px;">Stay connected, distraction-free</h3>
+                                <p style="font-size: 15px;">See what matters at a glance and leave your phone in your pocket.</p>
+                            </div>
+                        </li>
+                        <li class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3 style="font-size: 18px;">Peace of mind, always on</h3>
+                                <p style="font-size: 15px;">Fall detection and emergency SOS reach your contacts the moment you need help.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="reviews">
+        <h5 style="color: aqua; margin-top: 100px; margin-bottom: 10px; font-size:15px;">R E V I E W S</h5>
+        <h3 style="font-size: 40px; margin-top: 10px; margin-bottom: 10px">Loved by 12,000+ people</h3>
+        <p style="font-size: 18px; color: rgb(167, 202, 202); margin-bottom: 30px;" >Don't just take our word for it — here's what the Aurora community has to say.</p>
+        <div style="display: flex; margin-bottom: 100px">
+            <div class="review_div">
+                <i class="bi bi-quote"></i><br>
+                <div style="color: rgb(246, 78, 78); margin: 10px">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p style="color: rgb(167, 202, 202);">"The GPS accuracy and recovery scores completely changed how I train. I shaved 8 minutes off my personal best in three months."</p>
+                <div style="display: flex; margin-top: 40px">
+                <div class="div_head"><h5>M</h5></div>
+                <div class="div_content">
+                    <h4 style="font-size: 15px; margin: 0; margin-top: 10px">Maya Chen</h4>
+                    <p style="font-size: 12px; color: rgb(167, 202, 202);">Marathon runner</p>
+                </div>
+            </div>
+            </div>
+            <div class="review_div">
+                <i class="bi bi-quote"></i><br>
+                <div style="color: rgb(246, 78, 78); margin: 10px">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p style="color: rgb(167, 202, 202);">"Five-day battery is no joke — I charge it once a week. The sleep tracking finally helped me fix my routine."</p>
+                <div style="display: flex; margin-top: 40px">
+                <div class="div_head"><h5>D</h5></div>
+                <div class="div_content">
+                    <h4 style="font-size: 15px; margin: 0; margin-top: 10px">David Okafor</h4>
+                    <p style="font-size: 12px; color: rgb(167, 202, 202);">Software engineer</p>
+                </div>
+            </div>
+            </div>
+            <div class="review_div">
+                <i class="bi bi-quote"></i><br>
+                <div style="color: rgb(246, 78, 78); margin: 10px">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p style="color: rgb(167, 202, 202);">"The ECG alert caught an irregular rhythm early. As a nurse, I trust the data. It's genuinely the best purchase I've made."</p>
+                <div style="display: flex; margin-top: 40px">
+                <div class="div_head"><h5>M</h5></div>
+                <div class="div_content">
+                    <h4 style="font-size: 15px; margin: 0; margin-top: 10px">Priya Nair</h4>
+                    <p style="font-size: 12px; color: rgb(167, 202, 202);">New mom & nurse</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="pricing">
+            <h5 style="color: aqua; margin-bottom: 10px; font-size:15px;">P I C I N G</h5>
+            <h3 style="font-size: 40px; margin-top: 10px; margin-bottom: 10px">Choose your Aurora</h3>
+            <p style="font-size: 18px; color: rgb(167, 202, 202); margin-bottom: 30px;" >Free shipping, 30-day returns and interest-free installments on every model.</p>
+
+            <div style="display: flex; gap: 30px">
+                <div class="pricing_div">
+                    <h5>Aurora Lite</h5>
+                    <p style="color: rgb(167, 202, 202);">The essentials, beautifully done.</p>
+                    <p style="color: rgb(167, 202, 202);"><strong>$199</strong> once</p>
+                    <ul type="none" style="color: rgb(167, 202, 202); margin: 0; margin-bottom: 50px; align-items: flex-start;">
+                        <div class="pricing_points">
+                            <i class="bi bi-check" style="margin-right: 20px;"></i>
+                            <li>Heart-rate & sleep tracking</li>
+                        </div>
+                        <div class="pricing_points"><i class="bi bi-check" style="margin-right: 20px;"></i><li>50+ workout modes</li></div>
+                        <div class="pricing_points"><i class="bi bi-check" style="margin-right: 20px;"></i><li>3-day battery</li></div>
+                        <div class="pricing_points"><i class="bi bi-check" style="margin-right: 20px;"></i><li>1-year warranty</li></div>
+                        <div><br></div>
+                    </ul>
+
+                    <button href="#home" style="align-items: center;">Get Strated <i class="bi bi-arrow-right"></i></button>
+                </div>
+                
+                <div class="pricing_div" style="border: 1px solid aquamarine;">
+                    <h5>Aurora Series 5</h5>
+                    <p style="color: rgb(167, 202, 202);">Our most advanced smartwatch.</p>
+                    <p style="color: rgb(167, 202, 202);"><strong>$299</strong> once</p>
+                    <ul type="none" style="color: rgb(167, 202, 202); margin: 0; margin-bottom: 50px; align-items: flex-start;">
+                        <div class="pricing_points">
+                            <i class="bi bi-check" style="margin-right: 20px;"></i>
+                            <li>Everything in Lite</li>
+                        </div>
+                        <div class="pricing_points"><i class="bi bi-check" style="margin-right: 20px;"></i><li>Medical-grade ECG & SpO2</li></div>
+                        <div class="pricing_points"><i class="bi bi-check" style="margin-right: 20px;"></i><li>5-day battery + fast charge</li></div>
+                        <div class="pricing_points"><i class="bi bi-check" style="margin-right: 20px;"></i><li>Dual-band GPS</li></div>
+                        <div class="pricing_points"><i class="bi bi-check" style="margin-right: 20px;"></i><li>2-year warranty</li></div>
+                    </ul>
+
+                    <button href="#home">Get Strated <i class="bi bi-arrow-right"></i></button>
+                </div>
+
+                <div class="pricing_div">
+                    <h5>Aurora Ultra</h5>
+                    <p style="color: rgb(167, 202, 202);">Built for the extremes.</p>
+                    <p style="color: rgb(167, 202, 202);"><strong>$429</strong> once</p>
+                    <ul type="none" style="color: rgb(167, 202, 202); margin: 0; margin-bottom: 50px; align-items: flex-start;">
+                        <div class="pricing_points">
+                            <i class="bi bi-check" style="margin-right: 20px;"></i>
+                            <li>Everything in Series 5g</li>
+                        </div>
+                        <div class="pricing_points"><i class="bi bi-check" style="margin-right: 20px;"></i><li>Titanium sapphire case</li></div>
+                        <div class="pricing_points"><i class="bi bi-check" style="margin-right: 20px;"></i><li>100m dive rating</li></div>
+                        <div class="pricing_points"><i class="bi bi-check" style="margin-right: 20px;"></i><li>7-day battery</li></div>
+                        <div class="pricing_points"><i class="bi bi-check" style="margin-right: 20px;"></i><li>Priority support</li></div>
+                    </ul>
+
+                    <button href="#home">Get Strated <i class="bi bi-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="footer" style="border-bottom: 1px solid rgb(51, 85, 85);">
+    <footer id="footer" style="margin-bottom: 50px">
+        <div style="display: flex; gap: 130px">
+            <div style="width: 350px;">
+                <h4><i class="bi bi-smartwatch"></i> Aurora</h4>
+                <p style="margin-bottom: 20px; font-size: 15px">Smart wearables that help you move more, sleep better and live longer.</p>
+                <p style="font-size: 15px"><i class="bi bi-envelope"></i> support@aurora.com</p>
+                <p style="font-size: 15px"><i class="bi bi-telephone"></i> +1 (800) 555-0199</p>
+                <p style="font-size: 15px"><i class="bi bi-geo-alt"></i> 100 Market St, San Francisco, CA</p>
+            </div>
+            <div>
+                <h4>Product</h4>
+                <p class="footer_points">Features</p>
+                <p class="footer_points">Benefits</p>
+                <p class="footer_points">Pricing</p>
+                <p class="footer_points">Reviews</p>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <p class="footer_points">About Us</p>
+                <p class="footer_points">Careers</p>
+                <p class="footer_points">Press</p>
+                <p class="footer_points">Sustainability</p>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <p class="footer_points">Help center</p>
+                <p class="footer_points">Warranty</p>
+                <p class="footer_points">Returns</p>
+                <p class="footer_points">Contact</p>
+            </div>
+        </div>
+        
+    </footer>
+    </section>
+    <p style="font-size: 12px; margin-left: 170px; margin-top: 30px; margin-bottom:30px; color: rgb(167, 202, 202);"> &copy; 2026 Aurora Wearables Inc. All rights reserved.</p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
