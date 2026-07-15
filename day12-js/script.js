@@ -1,0 +1,1 @@
+console.lof("Hello from external file")

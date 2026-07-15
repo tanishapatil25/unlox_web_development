@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //DataType- different types of data
+
+        //1. String - "Anything between the quotes is String" or 'Text'
+        var customername = "John"
+
+        //build in method/function - task
+        //typeof(value)
+
+        console.log(typeof(customername))
+
+        //2. Number +ve, -ve, decimal Number
+        var age = -12.98
+        console.log(typeof(age))
+
+        //3. Boolean - true or false
+        var LoggedIn = true
+        var NetflixSub = "false"
+        console.log(typeof(LoggedIn))
+        console.log(typeof(NetflixSub))
+
+        //4. Undefined - when no value is assigned
+        var x
+        console.log(typeof(x))
+
+        //5. NULL - nothing
+        var discount = null
+        console.log(typeof(discount))
+        //There is Bug in js, data type of NULL its shows Object as output
+
+        //Data Type - 2
+        //var student1 = "Rakesh"
+        //var student2 = "Aalok"
+        //.....n
+
+        //Multiple value - Array
+        //Array : to store multiple data of different data type
+        //Symbol - [ ] - square-bracket
+        //Rule : Index no.(position of the data) starts with zero 0
+        var students = ["Shubham","rakesh", "Parna", 1101, true]
+        console.log(students)
+        //totla no of data we .length
+        console.log(students.length)
+        //Acess the data through index no.
+        console.log(students[1])
+        console.log(students[3])
+
+        //Object : collection of data
+        //symbol : { } curly bracket
+        //Rule : key:value pair
+
+        var employee = {
+            //key:value
+            name:"Tanisha",
+            email:"abc@gmail.com",
+            LoggednStatus: true
+        }
+        console.log(employee)
+        //Access it through keyName - objectname.keyname
+        console.log(employee.email)
+        console.log(employee.LoggednStatus)
+
+        //Funtion - to do a specific task
+        //keyword - function functionname
+        //task - buil BillCalculator
+
+        function BillCalculator(){
+            //body of function - instruction/logic
+
+            var product1 = "Milk"
+            var product2 = "Bread"
+
+            var price1 = 100
+            var price2 = 50
+            var total = price1 + price2
+            console.log("The total price of ",product1 , " and ", product2, " is ", total)
+        }
+
+        BillCalculator()
+
+    </script>
+</body>
+</html>
