@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather App — SkyReel</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/weather.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <a class="back-link" href="index.html">&larr; SkyReel</a>
+    <div class="app-title">Weather <em>App</em></div>
+  </header>
+
+  <main class="app-main">
+
+    <form class="search-row" id="search-form">
+      <label for="city-input" class="sr-only" style="position:absolute;left:-9999px;">City name</label>
+      <input id="city-input" type="text" placeholder="Search a city, e.g. Pune" autocomplete="off" required>
+      <button id="search-btn" type="submit">Search</button>
+    </form>
+
+    <div id="result-slot">
+      <div class="state-panel" id="state-panel">Type a city above to see live conditions.</div>
+    </div>
+
+  </main>
+
+  <script type="module" src="js/weather.js"></script>
+</body>
+</html>

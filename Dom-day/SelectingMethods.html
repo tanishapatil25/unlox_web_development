@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myP">This is Paragragh Tag</p>
+
+    <div class="myC">This is div-0</div>
+    <div class="myC">This is div-1</div>
+
+    <p>This is paragrapg -1</p>
+    <p>This is paragraph -2</p>
+
+    <button>Login</button>
+
+    <div class="box">HTML</div>
+    <div class="box">JavaScript</div>
+
+    <script>
+        //select method
+        //document - webpage , element - tag
+        //getElementById
+
+        const paragrapg = document.getElementById("myP")
+        console.log(paragraph)
+        console.log(paragraph.textContent)
+
+        //geElementByClassName("Class_Name")
+        const container = document.getElementsByClassName("myC")
+        console.log(container)
+        console.log(container[1])
+        console.log(container[1].textContent)
+
+        //getElementByTagName("TagName")
+        const ele = document.getElementsByTagName("p")
+        console.log(ele)
+        console.log(ele[1])
+        console.log(ele[1].textContent)
+
+        const btn = document.getElementsByTagName("button")
+        console.log(btn)
+        console.log(btn[0].textContent)
+
+        //querySelector() - I will follow CSS formula, #idname, .className , Tagname
+        //Select the first HTML single Element/Tag
+        const abc = document.querySelector(".box")
+        console.log(abc)
+
+        const xyz = document.querySelectorAll(".box")
+        console.log(xyz)
+    </script>
+</body>
+</html>

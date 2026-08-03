@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //https://randomuser.me/api
+        //fetch('API_Adress')
+        //Rule: Convert the response into JSON format
+
+        fetch('https://randomuser.me/api/')
+        //successfull
+        .then(response => response.json())
+        .then(data => console.log(data.result))
+        //Error
+        .catch(function(error){
+            console.log('Error Connection', error)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //API - carries data
+        //http://www.omdbapi.com/?t=MovieName&apikey=eb5d4636
+
+        async function getMovie(movieName){
+            let url = `http://www.omdbapi.com/?t=${movieName}&apikey=eb5d4636`
+            try{
+                //getting Data From API
+                let response = await fetch(url)
+                let data = await response.json()
+                console.log(data)
+                console.log(data.Title)
+                if(data.Response == "True"){
+                    console.log(`Title : ${data.Title}`)
+                    console.log(`Year: ${data.Year}`)
+                    console.log(`Plot : ${data.Plot}`)
+                }else{
+                    console.log("Movie not found")
+                }
+                 
+            }catch(error){
+                //Error
+                console.log("Error Fetching Movie", error)
+            }
+        }
+        getMovie("spiderman")
+        function ExtraTask(){
+            console.log("Hello everyone Welcome to JS")
+        }
+    </script>
+</body>
+</html>

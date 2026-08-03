@@ -1,0 +1,152 @@
+/* =========================================================
+   Weather App
+   ========================================================= */
+
+.app-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 6vw 0;
+}
+.back-link{
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.back-link:hover{ color: var(--text); }
+.app-title{
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+.app-title em{ font-style: normal; color: var(--sky); }
+
+.app-main{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 6vw 6vw 8vw;
+}
+
+.search-row{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+.search-row input{
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 1rem;
+}
+.search-row input::placeholder{ color: var(--muted); }
+.search-row input:focus-visible{ outline: 2px solid var(--sky); outline-offset: 2px; }
+
+.search-row button{
+  background: var(--sky);
+  color: #08222B;
+  border: none;
+  border-radius: 12px;
+  padding: 0 24px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: filter .15s ease;
+}
+.search-row button:hover{ filter: brightness(1.08); }
+.search-row button:disabled{ opacity: 0.5; cursor: not-allowed; }
+
+/* --- state panels: idle / loading / error share one slot --- */
+.state-panel{
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.9rem;
+}
+.state-panel.error{
+  border-color: #6B3A34;
+  color: #E8917C;
+  background: rgba(232,145,124,0.06);
+}
+
+.weather-card{
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 36px;
+}
+
+.wc-top{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 26px;
+  margin-bottom: 26px;
+}
+.wc-place{
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.wc-condition{
+  color: var(--sky);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.wc-icon{ width: 64px; height: 64px; color: var(--sky); flex-shrink: 0; }
+
+.wc-temp{
+  font-family: var(--mono);
+  font-size: 4.2rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.wc-feels{
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.wc-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.wc-stat{
+  background: var(--surface-2);
+  border-radius: 12px;
+  padding: 16px;
+}
+.wc-stat span{
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.wc-stat strong{
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+@media (max-width: 560px){
+  .wc-grid{ grid-template-columns: 1fr 1fr; }
+  .wc-temp{ font-size: 3.2rem; }
+}

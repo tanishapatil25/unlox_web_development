@@ -1,0 +1,209 @@
+/* =========================================================
+   SkyReel — shared tokens & landing page
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root{
+  /* ---- color tokens ---- */
+  --ink:        #0E1116;   /* base background */
+  --surface:    #161B22;   /* card / panel surface */
+  --surface-2:  #1D232C;   /* raised surface */
+  --line:       #2A313C;   /* hairline borders */
+  --text:       #EDEFF2;   /* primary text */
+  --muted:      #8B93A1;   /* secondary text */
+
+  --sky:        #5EC8E8;   /* weather accent */
+  --sky-dim:    #2E4A57;
+  --gold:       #E8B34D;   /* movie / marquee accent */
+  --gold-dim:   #4A3E23;
+  --violet:     #8B7FD1;   /* connective accent, hero */
+
+  /* ---- type ---- */
+  --display: 'Space Grotesk', sans-serif;
+  --body:    'Inter', sans-serif;
+  --mono:    'JetBrains Mono', monospace;
+
+  --radius: 14px;
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; text-decoration: none; }
+button{ font-family: inherit; cursor: pointer; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ---------------------------------------------------------
+   Landing page
+   --------------------------------------------------------- */
+
+.top-mark{
+  position: fixed;
+  top: 28px; left: 32px;
+  z-index: 20;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  display: flex; align-items: center; gap: 8px;
+}
+.top-mark span{ color: var(--muted); font-weight: 400; }
+
+.hero{
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 44px 1fr;
+}
+
+.panel{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8vw 6vw;
+  overflow: hidden;
+}
+
+.panel--sky{
+  background:
+    radial-gradient(120% 90% at 15% 10%, rgba(94,200,232,0.16), transparent 60%),
+    var(--ink);
+}
+.panel--reel{
+  background:
+    radial-gradient(120% 90% at 85% 90%, rgba(232,179,77,0.14), transparent 60%),
+    var(--ink);
+}
+
+.eyebrow{
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.panel--sky .eyebrow{ color: var(--sky); }
+.panel--reel .eyebrow{ color: var(--gold); }
+
+.panel h1{
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  line-height: 0.92;
+  margin: 0 0 20px;
+  letter-spacing: -0.02em;
+}
+.panel--sky h1{ color: var(--text); }
+.panel--reel h1{ color: var(--text); }
+
+.panel p{
+  max-width: 34ch;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin: 0 0 34px;
+}
+
+.cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.cta:hover{ transform: translateY(-2px); }
+.cta:focus-visible{ outline: 2px solid var(--text); outline-offset: 3px; }
+.panel--sky .cta:hover{ border-color: var(--sky); background: var(--sky-dim); }
+.panel--reel .cta:hover{ border-color: var(--gold); background: var(--gold-dim); }
+
+.cta svg{ width: 16px; height: 16px; }
+
+/* live data chip — proof-of-skill: real API call on the landing page itself */
+.chip{
+  margin-top: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  width: fit-content;
+}
+.chip strong{ color: var(--text); font-weight: 500; }
+.chip .dot{
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--sky);
+  box-shadow: 0 0 0 0 rgba(94,200,232,.6);
+  animation: pulse 2.4s infinite;
+}
+.panel--reel .chip .dot{ background: var(--gold); box-shadow: 0 0 0 0 rgba(232,179,77,.6); }
+
+@keyframes pulse{
+  0%{ box-shadow: 0 0 0 0 rgba(94,200,232,.5); }
+  70%{ box-shadow: 0 0 0 8px rgba(94,200,232,0); }
+  100%{ box-shadow: 0 0 0 0 rgba(94,200,232,0); }
+}
+
+/* the sprocket-hole divider — a literal film-strip motif joining the two worlds */
+.sprocket{
+  position: relative;
+  background: var(--surface);
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+.sprocket-track{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 40px 0;
+}
+.sprocket-track i{
+  width: 14px; height: 14px;
+  border-radius: 4px;
+  background: var(--ink);
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+@media (max-width: 860px){
+  .hero{ grid-template-columns: 1fr; }
+  .sprocket{ display: none; }
+  .panel{ padding: 14vw 8vw; min-height: 60vh; }
+}
+
+.footer-note{
+  position: fixed;
+  bottom: 20px; right: 32px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  z-index: 20;
+}
+@media (max-width: 860px){ .footer-note{ display:none; } }

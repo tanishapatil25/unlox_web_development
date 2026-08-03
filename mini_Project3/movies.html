@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Search — SkyReel</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/weather.css">
+<link rel="stylesheet" href="css/movies.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <a class="back-link" href="index.html">&larr; SkyReel</a>
+    <div class="app-title">Movie <em>Search</em></div>
+  </header>
+
+  <main class="app-main" style="max-width:960px;">
+
+    <form class="search-row" id="search-form">
+      <input id="movie-input" type="text" placeholder="Search a title, e.g. Interstellar" autocomplete="off" required>
+      <button class="gold" id="search-btn" type="submit">Search</button>
+    </form>
+
+    <div id="result-slot">
+      <div class="state-panel" id="state-panel">Type a title above to search the catalogue.</div>
+    </div>
+
+  </main>
+
+  <!-- detail modal -->
+  <div class="modal-backdrop hidden" id="modal-backdrop">
+    <div class="modal" id="modal"></div>
+  </div>
+
+  <script type="module" src="js/movies.js"></script>
+</body>
+</html>

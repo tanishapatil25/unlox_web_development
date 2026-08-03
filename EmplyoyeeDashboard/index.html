@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Google Fonts -> search Google fonts html link-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!--Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!--downloaded icon from Icons8-->
+    <link rel="icon" type="image/png" href="./assets/icons8-employee-48.png">
+</head>
+<body>
+    <div class="container">
+        <!--side bar-->
+        <aside>
+        <h2 class="logo">EmployeeHub</h2>
+        <ul>
+            <li><i class="fa-solid fa-house"></i>Dashboard</li>
+            <li><i class="fa-solid fa-users"></i>Employee</li>
+
+            <li><i class="fa-solid fa-building"></i>Department</li>
+
+            <li><i class="fa-solid fa-chart-line"></i>Reports</li>
+
+            <li><i class="fa-solid fa-gear"></i>Settings</li>
+
+            <li><i class="fa-solid fa-right-from-bracket"></i>Logout</li>
+
+        </ul>
+        </aside>
+        <main class="main-content">
+        <!--navbar-->
+        <header class="navbar">
+            <input type="text" placeholder="Search Employee">
+
+            <div class="profile">
+                <i class="fa-solid fa-bell"></i>
+                <img src="https://i.pravatar.cc/40" alt="Userimage">
+                <span>Admin</span>
+            </div>
+        </header>
+        <!-- Dashboar title -->
+         <h1>Dashboard Overview</h1>
+         <!--cards-->
+         <section class="card">
+            <div class="card">
+                <h3>Total Employee</h3>
+                <p>250</p>
+            </div>
+            <div class="card">
+                <h3>Active</h3>
+                <p>220</p>
+            </div>
+            <div class="card">
+                <h3>On leave</h3>
+                <p>15</p>
+            </div>
+            <div class="card">
+                <h3>Department</h3>
+                <p>8</p>
+            </div>
+         </section>
+         <!--tabel-->
+         <section class="employee-section">
+            <div class="table-header">
+                <h2>Employee List</h2>
+                <button>Add Employee</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>developer</td>
+                        <td>Rs 80,000</td>
+                        <td><span class="status active">Active</span></td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+         </section>
+        </main>
+    </div>
+</body>
+</html>

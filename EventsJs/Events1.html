@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Add to Cart</button>
+    <p id="msg"></p>
+    <script>
+        //1.selct element
+        const button = document.getElementById("btn")
+        const message = document.getElementById("msg")
+
+        //2. addEventListner(`Type of Event`, function(){})
+        //1. Click
+        button.addEventListener('click',functiion())
+            message.textContent = "Product added to cart"
+        //2. double click
+        //button.addEventListener('dbclick', function())
+        //    message.textContent = "Product added to cart"
+    </script>
+</body>
+</html>

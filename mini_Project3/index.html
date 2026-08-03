@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyReel — Weather &amp; Movie Search</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="top-mark">SkyReel <span>· two apps, one API mindset</span></div>
+  <div class="footer-note">HTML5 · CSS3 · JS ES6+ · Fetch API</div>
+
+  <main class="hero">
+
+    <!-- Weather half -->
+    <section class="panel panel--sky">
+      <p class="eyebrow">01 — Live Conditions</p>
+      <h1>SKY</h1>
+      <p>Search any city and get real-time temperature, humidity and wind — pulled live from a public weather API, no page reloads.</p>
+      <a class="cta" href="weather.html">
+        Open Weather App
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="chip"><span class="dot"></span> <span id="landing-weather">Reading current sky…</span></div>
+    </section>
+
+    <div class="sprocket" aria-hidden="true">
+      <div class="sprocket-track">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+    </div>
+
+    <!-- Movie half -->
+    <section class="panel panel--reel">
+      <p class="eyebrow">02 — Now Screening</p>
+      <h1>REEL</h1>
+      <p>Search a title and pull posters, ratings and release details straight from a public movie database, rendered on the fly.</p>
+      <a class="cta" href="movies.html">
+        Open Movie Search
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="chip"><span class="dot"></span> <strong id="landing-count">—</strong>&nbsp;titles indexed this session</div>
+    </section>
+
+  </main>
+
+  <script type="module">
+    import { OPENWEATHERMAP_API_KEY } from './js/config.js';
+
+    // Small proof-of-life fetch on the landing page itself.
+    const label = document.getElementById('landing-weather');
+    const countEl = document.getElementById('landing-count');
+
+    async function loadAmbientWeather(){
+      try{
+        if (OPENWEATHERMAP_API_KEY === 'YOUR_OPENWEATHERMAP_API_KEY_HERE'){
+          label.textContent = 'Add an API key to enable live weather';
+          return;
+        }
+        // Pune as a sensible default; the real search lives inside the Weather App.
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=Pune,IN&appid=${OPENWEATHERMAP_API_KEY}&units=metric`;
+        const res = await fetch(url);
+        if(!res.ok) throw new Error('network');
+        const { main } = await res.json();
+        label.textContent = `Pune right now: ${Math.round(main.temp)}°C`;
+      }catch{
+        label.textContent = 'Live weather unavailable offline';
+      }
+    }
+
+    // Cosmetic counter that ticks up to imply an active session — purely visual, no backend.
+    let n = 0;
+    const target = 128 + Math.floor(Math.random()*40);
+    const tick = setInterval(()=>{
+      n += Math.ceil((target-n)/12) || 1;
+      countEl.textContent = n;
+      if(n >= target){ countEl.textContent = target; clearInterval(tick); }
+    }, 60);
+
+    loadAmbientWeather();
+  </script>
+</body>
+</html>

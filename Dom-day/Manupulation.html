@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Example 1 - updating text content-->
+    <button id="btn">Login</button>
+    <p id="mp">Welcome guest</p>
+
+    <!-- Example 2 -updating tag itself-->
+    <div id="mydiv">this is div</div>
+
+    <!--Example 3 change the css properties-->
+    <p id="abc">This is old Dull paragraph</p>
+
+    <!--Example 4 - Create Element/Tag throught Js-->
+
+    <ul id="xys">
+        <li>Gym</li>
+    </ul>
+
+    <script>
+        //Example 1
+        //update the text content
+        const button = document.getElementById("btn")
+        console.log(button)
+
+        console.log(button.textContent)
+        button.textContent ="Logout"
+
+        const paragraph = document.getElementsById("mp")
+        paragraph.textContent = "Good evening Tanisha"
+
+        //Example 2 - innerHTML - which help us to update tag also content as well
+        const container = socument.getElementById("mydiv")
+        console.log(container)
+
+        //single HTML tag updates under quotes
+        //container.innerHTML = "<h2>This is Heading Tag now</h2>"
+        //multiple html tags under backtick `
+        container.innerHTML = `
+        <p>This is <mark>Updated</mark> Tag</p>
+        <img src="https://images.pixels.com/photos/38593974/pixels-photo-38593974.jpeg" height="100" width="150">
+        <button>Smile</button>
+        `
+        //Example 3 
+        const para = document.getElementsById("abc")
+        //.style.propertyName
+        para.style.color = "red"
+        para.style.backgroundColor="black"
+        para.style.textAlign="center"
+        para.textContent = "This is new paragraph"
+
+        //Example 4
+        const list = ducument.getElementById("xyz")
+        //document.createElement("TagName")
+        const li = document.createElement("li")
+        li.textContent = "Office"
+        li.style.color = "red"
+        //ParentName.appendChild()
+        list.appendChild(li)
+        
+    </script> 
+
+    <div
+
+
+</body>
+</html>

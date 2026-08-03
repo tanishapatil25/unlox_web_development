@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //templat string = text and variable
+        let name = "john"
+        let country = "Russia"
+
+        console.log("My name is ", name, "and I am from ", country, "Good Evening")
+
+        //New way - clean and readable- backtick `` ${variable/ Parameter}
+        console.log(`Dear ${name},
+        How are ypu? Did ypu come from ${country},
+        Hoave a nice day
+        `)
+
+        //Arrow funtion
+        function xys(){
+            console.log("Hello i am old function")
+        }
+        xyz()
+        let abc = ()=> {
+            console.log("Hello i am Arrow function - in one single line")
+        }
+        abc() // calling th arrow function
+
+        //set the timeer tp functiom
+        setTimeout(()=>{
+            console.log("I will give you the output after some time")
+        },5000)  //1000 = 1 second
+
+
+        <!-- setInterval(()=>{
+            console.log("Code will run after every 2 second of break")
+        },5000) -->
+    </script>
+</body>
+</html>
