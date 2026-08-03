@@ -17,6 +17,8 @@
 }
 
 .movie-card{
+  display: block;
+  width: 100%;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 14px;
