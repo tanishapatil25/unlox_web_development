@@ -11,5 +11,5 @@
 // the FREE tier — an activation link is emailed instantly) and paste
 // the key below.
 
-export const OPENWEATHERMAP_API_KEY = ';
-export const OMDB_API_KEY =';
+export const OPENWEATHERMAP_API_KEY ='83223b23baaf8681a02efaef547dfb94' ;
+export const OMDB_API_KEY ='eb5d4636';
